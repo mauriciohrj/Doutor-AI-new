@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel de Matching</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Painel de Matching</h1>
+        <p>
+          Configure os pesos de matching e acompanhe justificativas e ajustes por
+          usuário.
+        </p>
+      </header>
+
+      <section class="grid">
+        <div class="card">
+          <h2>Configuração de pesos</h2>
+          <form data-config-form>
+            <label>
+              Usuário responsável
+              <input name="userId" type="text" data-user-id />
+            </label>
+            <div class="weights">
+              <label>
+                Stage
+                <input name="stage" type="number" step="0.05" min="0" max="1" />
+              </label>
+              <label>
+                Ticket size
+                <input
+                  name="ticketSize"
+                  type="number"
+                  step="0.05"
+                  min="0"
+                  max="1"
+                />
+              </label>
+              <label>
+                Setor
+                <input name="sector" type="number" step="0.05" min="0" max="1" />
+              </label>
+              <label>
+                Tese
+                <input name="thesis" type="number" step="0.05" min="0" max="1" />
+              </label>
+              <label>
+                Geografia
+                <input
+                  name="geography"
+                  type="number"
+                  step="0.05"
+                  min="0"
+                  max="1"
+                />
+              </label>
+              <label>
+                Histórico
+                <input name="history" type="number" step="0.05" min="0" max="1" />
+              </label>
+            </div>
+            <button type="submit">Salvar ajustes</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <h2>Resultado do match</h2>
+          <p class="score">
+            Score total: <span data-score>0</span>
+          </p>
+          <h3>Justificativas</h3>
+          <ul data-reasons></ul>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="card">
+          <h2>Histórico de justificativas</h2>
+          <ul data-justifications></ul>
+        </div>
+        <div class="card">
+          <h2>Ajustes por usuário</h2>
+          <ul data-audit></ul>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
